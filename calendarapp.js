@@ -41,10 +41,29 @@ if (Meteor.isClient) {
         $('#calendar').fullCalendar({
             googleCalendarApiKey: 'AIzaSyA0uxTs_BpYPrCEa7K8bG_lsMWlrEMUCcc',
             events: {
-                googleCalendarId: 'slugcal@gmail.com'
+                googleCalendarId: 'slugcal@gmail.com',
+                color: 'darkred',
+                borderColor: 'black',
+                className: 'noDec'
+            },
+            eventMouseover: function(event, element) {
+              // element.qtip({
+              //   content: event.description
+              // });
+              //element.onmouseover()
+              console.log(event.description);
+              console.log(event.title);
             }
         });
     });
+  }
+
+      
+
+        // $('.fc-day').mouseover(function(){
+        //   console.log("asdfasdf");
+        //   console.log($(this).text);
+        // })
     // var calendar = $('#calendar').fullCalendar({
     //   dayClick:function(date,allDay,jsEvent,view){
     //     var calendarEvent = {};
@@ -73,13 +92,13 @@ if (Meteor.isClient) {
     //   editable:true,
     //   selectable:true
     // }).data().fullCalendar;
-    Deps.autorun(function(){
-      CalEvent.find().fetch();
-      if(calendar){
-        calendar.refetchEvents();
-      }
-    })
-  }
+    // Deps.autorun(function(){
+    //   CalEvent.find().fetch();
+    //   if(calendar){
+    //     calendar.refetchEvents();
+    //   }
+    // })
+  
 }
 
 if (Meteor.isServer) {
