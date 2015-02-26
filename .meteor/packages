@@ -5,10 +5,18 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 insecure
-mrt:fullcalendar
+rzymek:fullcalendar
 mrt:bootstrap-3
 accounts-base
 accounts-password
 accounts-ui
+cfs:standard-packages
+cfs:filesystem
+dsyko:meteor-node-csv
+meteorhacks:npm
+
+
+npm-container
+autopublish
+jquery

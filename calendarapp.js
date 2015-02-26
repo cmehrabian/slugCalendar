@@ -20,6 +20,9 @@ if (Meteor.isClient) {
     }
   });
   Template.main.helpers({
+    addresses: function(){
+      return Addresses.find();
+    },
     editing_event: function(){
       return Session.get('editing_event');
     }
@@ -34,29 +37,42 @@ if (Meteor.isClient) {
   }
 
   Template.main.rendered = function(){
-    var calendar = $('#calendar').fullCalendar({
-      dayClick:function(date,allDay,jsEvent,view){
-        var calendarEvent = {};
-        calendarEvent.start = date;
-        calendarEvent.end = date;
-        calendarEvent.title = 'New Event';
-        calendarEvent.owner = Meteor.userId();
-        Meteor.call('saveCalEvent', calendarEvent);
-      },
-      eventClick:function(calEvent, jsEvent, view){
-        Session.set('editing_event', calEvent._id);
-        $('#title').val(calEvent.title);
-      },
-      eventDrop:function(reqEvent){
-        Meteor.call('moveEvent', reqEvent);
-      },
-      events:function(start, end, callback){
-        var calEvents = CalEvent.find({},{reactive:false}).fetch();
-        callback(calEvents);
-      },
-      editable:true,
-      selectable:true
-    }).data().fullCalendar;
+    $(document).ready(function() {
+        $('#calendar').fullCalendar({
+            googleCalendarApiKey: 'AIzaSyA0uxTs_BpYPrCEa7K8bG_lsMWlrEMUCcc',
+            events: {
+                googleCalendarId: 'slugcal@gmail.com'
+            }
+        });
+    });
+    // var calendar = $('#calendar').fullCalendar({
+    //   dayClick:function(date,allDay,jsEvent,view){
+    //     var calendarEvent = {};
+    //     calendarEvent.title = 'New Event';
+    //     calendarEvent.start = date;
+    //     calendarEvent.end = date;
+    //     // calenderEvent.where = "Porter"
+    //     calendarEvent.owner = Meteor.userId();
+    //     Meteor.call('saveCalEvent', calendarEvent);
+    //   },
+    //   eventClick:function(calEvent, jsEvent, view){
+    //     Session.set('editing_event', calEvent._id);
+    //     $('#title').val(calEvent.title);
+    //   },
+    //   eventDrop:function(reqEvent){
+    //     Meteor.call('moveEvent', reqEvent);
+    //   },
+    //   events:function(start, end, callback){
+    //     var calEvents = CalEvent.find({},{reactive:false}).fetch();
+    //     callback(calEvents);
+    //   },
+    //   eventMouseover:function(calEvent, jsEvent, view){
+    //     Session.set('editing_event', calEvent._id);
+    //     $('#title').val(calEvent.title);
+    //   },
+    //   editable:true,
+    //   selectable:true
+    // }).data().fullCalendar;
     Deps.autorun(function(){
       CalEvent.find().fetch();
       if(calendar){
