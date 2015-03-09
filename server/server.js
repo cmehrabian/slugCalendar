@@ -25,14 +25,14 @@ Meteor.startup(function () {
 
 SearchSource.defineSource('calevent', function(searchText, options) 
 {
-  var options = {sort: {isoScore: -1}, limit: 20};
+  var options = {sort: {isoScore: -1}, limit: 5};
 
   if(searchText) {
     var regExp = buildRegExp(searchText);
     var selector = {eventTitle: regExp, description: regExp};
-    return calEvent.find(selector, options).fetch();
+    return CalEvent.find(selector, options).fetch();
   } else {
-    return calEvent.find({}, options).fetch();
+    return CalEvent.find({}, options).fetch();
   }
 });
 
