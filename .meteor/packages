@@ -20,3 +20,5 @@ meteorhacks:npm
 npm-container
 autopublish
 jquery
+acemtp:algolia
+meteorhacks:search-source

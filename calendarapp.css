@@ -1,5 +1,5 @@
 /* CSS declarations go here */
-/*.noDec{
-	pointer-events: none;
-  cursor: default;
-}*/
+.noDec{
+	/*pointer-events: none;
+  cursor: pointer;*/
+}

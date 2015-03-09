@@ -13,18 +13,21 @@
 </body>
 
 <template name="main">
-	{{#if editing_event}}
-		{{>dialog}}
-	{{/if}}
+	
 	<div class="container">
 		<h1 align="center">Slug Calendar</h1>	
 		{{>loginButtons}}
-    <div class="form">
-        <input type="search" class="form-control" placeholder="Search">
-    </div>
+    {{>search}}
+    {{>searchResult}}
+    <!-- <div class="form">
+        <input type="text" name="q" id="q" autocomplete="off" spellcheck="false" autocorrect="false" class="form-control string" placeholder="Search..." />
+    </div> -->
 		<div id="calendar">
 		</div>
 	</div>
+  {{#if editing_event}}
+    {{>dialog}}
+  {{/if}}
 </template>
 
 <template name="dialog">
@@ -38,15 +41,50 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" placeholder="Enter a Title" value="{{title}}" readonly>
+            <input type="text" class="form-control" placeholder="Enter a Title" value="{{title}}" readonly>
+          </div>
+          <div class="span 3">
+          <label for="description">Description</label>
+            <p id="description">{{description}}</p>
           </div>
         </div>
         <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">RSVP</button>
           <button type="button" class="btn btn-default closeDialog" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary updateTitle">Save</button>
+
         </div>
+        <input type="text" class="form-control" placeholder="Start" value="" readonly>
+        <input type="text" class="form-control" placeholder="End" value="" readonly>
+
       </div>
     </div>
   </div>
 </template>
+
+<template name="search">
+    <div class="form">
+          <input type="text" id="search-box" placeholder="Search..." />
+          
+    </div>
+</template>
+<template name="searchResult">
+  <div id="search-result">
+      <div id = "search-meta">
+        {{#if isLoading}}
+          searching ...
+        {{/if}}
+      </div>
+        {{#each getEvents}}
+          <div class="eventTitle">
+            <h4 class="Title">
+              <a href="{{title}}" target="_blank">{{{eventTitle}}}</a>
+            </h4>
+            <div class="description">
+              {{{description}}}
+            </div>
+          </div>
+        {{/each}}
+  </div>
+</template>
+
 
