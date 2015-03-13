@@ -3,3 +3,15 @@
 	/*pointer-events: none;
   cursor: pointer;*/
 }
+#slugRunner {
+	max-width: 82px;
+	display: inline-block;
+	position: absolute;
+	top: 2.2%;
+	/*left: 30%;*/
+	
+	z-index: 10000;
+	/*position:absolute;*/
+	/*z-index: 100;*/
+	/**/
+}

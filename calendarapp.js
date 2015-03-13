@@ -16,11 +16,22 @@ if (Meteor.isClient) {
   Template.dialog.helpers({
     title: function(){
       var ce = CalEvent.findOne({_id:Session.get('editing_event')});
+      ceID = ce._id;
       return ce.title;
     },
     description: function(){
       var ce = CalEvent.findOne({_id:Session.get('editing_event')});
       return ce.description;
+    },
+    start: function(){
+      var ce = CalEvent.findOne({_id:Session.get('editing_event')});
+      return ce.eventStart;
+      //return ce.start;
+      // console.log(this);
+    },
+    end: function(){
+      var ce = CalEvent.findOne({_id:Session.get('editing_event')});
+      return ce.eventEnd;
     }
   });
 
@@ -43,6 +54,7 @@ if (Meteor.isClient) {
   var fields = ['eventTitle', 'description'];
 
   eventSearch = new SearchSource('calevent', fields, options);
+
 
 
   Template.searchResult.helpers({
@@ -70,6 +82,36 @@ if (Meteor.isClient) {
       eventSearch.search(text);
     }, 200)
   });
+
+  Template.chat.helpers({
+    chatLog:function(){
+      // console.log(modalID);
+      //modalID:modalID
+      x = ceID;
+      return Chatter.find({modalID:x}, {sort:{timestamp: 1}});
+      
+    },
+    userName: function(){
+      console.log(this);
+      return this.user.emails[0].address;
+    }
+  });
+
+  Template.chat.events({
+      'keypress input': function(e) {
+        if(e.keyCode != 13)
+          return;
+
+        var message = document.getElementById("chat-box").value;
+
+        if(message.length == 0)
+          return;
+
+        Meteor.call("newMessage", message, ceID);
+        document.getElementById("chat-box").value = "";
+      }
+  });
+
 
 //=========================================
   // DIALOG
@@ -102,7 +144,6 @@ if (Meteor.isClient) {
               left:   'prev',
               center: 'title',
               right:  'next',
-
             },
             // console.log(document);
 
@@ -116,9 +157,6 @@ if (Meteor.isClient) {
 
             eventMouseover: function(calEvent, jsEvent, view, date) {
               console.log(calendar);
-
-              
-
               // change the day's background color just for fun
               $(this).css('background-color', 'red');
 
@@ -137,11 +175,38 @@ if (Meteor.isClient) {
             },  
             eventAfterAllRender: function(view) {
               cal = calendar.fullCalendar('clientEvents');
-              console.log(cal);
-              calLength = cal.length;
-              return cal;
+              var calObj = JSON.stringify(cal);
+              // console.log("XXX"+calObj);
+
+              calStart = [];
+              calEnd = [];
+
+              cal.forEach(function(item) {
+                eventStart = item.start._d;
+                eventEnd = item.end._d;
+                eventID = item._id;
+                // calStart.push(item.start._d);
+                // calEnd.push(item._end._d)
+                CalEvent.update({_id:item._id}, {$set:{"eventStart":item.start._d}});
+                CalEvent.update({_id:item._id}, {$set:{"eventEnd":item.end._d}});
+                
+                // CalEvent.push(eventStart);
+                CalEvent.insert(item);
+              })
+              // CalEvent.insert(c);
+              // calLength = cal.length;
+              // Meteor.call('allRender', cal);
+              // return calendarEvents;
+
             }
         });
     });
-  }
+  //   var calendar = $('#calendar').fullCalendar({
+  //     eventClick: function(calEvent){
+  //       console.log(cal2);
+  //     }
+
+  //   });
+  
+   }
 }
