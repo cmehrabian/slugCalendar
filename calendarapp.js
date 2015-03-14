@@ -155,8 +155,8 @@ if (Meteor.isClient) {
               }
             },
 
-            eventMouseover: function(calEvent, jsEvent, view, date) {
-              console.log(calendar);
+            eventMouseover: function(calEvent, jsEvent, view,   date) {
+
               // change the day's background color just for fun
               $(this).css('background-color', 'red');
 
@@ -171,7 +171,7 @@ if (Meteor.isClient) {
               // var calID = event.source.googleCalendarId;
               // var diaTitle = event.title.val;
               // console.log(diaTitle);
-              console.log(event);
+              // console.log(event);
             },  
             eventAfterAllRender: function(view) {
               cal = calendar.fullCalendar('clientEvents');
@@ -180,7 +180,8 @@ if (Meteor.isClient) {
 
               calStart = [];
               calEnd = [];
-
+              if(CalEvent.find().fetch() != 0)
+                return;
               cal.forEach(function(item) {
                 eventStart = item.start._d;
                 eventEnd = item.end._d;
