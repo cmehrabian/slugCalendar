@@ -23,8 +23,9 @@
     <!-- <div class="form">
         <input type="text" name="q" id="q" autocomplete="off" spellcheck="false" autocorrect="false" class="form-control string" placeholder="Search..." />
     </div> -->
-	<div id="calendar">
+	<div id="calendarFull">
 	</div>
+  <div id="calendar"></div>
 	</div>
   {{#if editing_event}}
     {{>dialog}}
@@ -50,8 +51,8 @@
         <div class="modal-footer">
           {{>chat}}
         </div>
-        <input type="text" class="form-control" placeholder="Start" value="{{start}}" readonly >
-        <input type="text" class="form-control" placeholder="End" value="{{end}}" readonly>
+        <input type="text" class="form-control" placeholder="" value="{{start}}" readonly >
+        <input type="text" class="form-control" placeholder="" value="{{end}}" readonly>
 
       </div>
     </div>

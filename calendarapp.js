@@ -132,6 +132,7 @@ if (Meteor.isClient) {
   Template.main.rendered = function(){
     $(document).ready(function() {
         var calendar = $('#calendar').fullCalendar({
+
           //input for API key from user
             googleCalendarApiKey: 'AIzaSyA0uxTs_BpYPrCEa7K8bG_lsMWlrEMUCcc',
             events: {
@@ -155,33 +156,23 @@ if (Meteor.isClient) {
               }
             },
 
-            eventMouseover: function(calEvent, jsEvent, view,   date) {
+            eventMouseover: function(calEvent, jsEvent, view, date) {
 
               // change the day's background color just for fun
               $(this).css('background-color', 'red');
 
-
-              // Session.set('editing_event', event._id);
-
-              // var description = event.description;
-              // var start = event.start; //start index 16 + 4
-
-              // //bool if allDay true then no time
-              // var allDay = event.allDay;
-              // var calID = event.source.googleCalendarId;
-              // var diaTitle = event.title.val;
-              // console.log(diaTitle);
-              // console.log(event);
             },  
             eventAfterAllRender: function(view) {
               cal = calendar.fullCalendar('clientEvents');
-              var calObj = JSON.stringify(cal);
+              calObj = JSON.stringify(cal);
+              console.log(calObj);
               // console.log("XXX"+calObj);
 
               calStart = [];
               calEnd = [];
-              if(CalEvent.find().fetch() != 0)
-                return;
+//               Tylers code screws the start and end db entry, i dunno why
+//               if(CalEvent.find().fetch() != 0)
+//                 return;
               cal.forEach(function(item) {
                 eventStart = item.start._d;
                 eventEnd = item.end._d;
@@ -198,16 +189,10 @@ if (Meteor.isClient) {
               // calLength = cal.length;
               // Meteor.call('allRender', cal);
               // return calendarEvents;
-
+              // $('#calendar').hide();
             }
         });
     });
-  //   var calendar = $('#calendar').fullCalendar({
-  //     eventClick: function(calEvent){
-  //       console.log(cal2);
-  //     }
-
-  //   });
-  
+    
    }
 }
