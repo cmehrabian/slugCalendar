@@ -21,6 +21,9 @@ if (Meteor.isClient) {
     },
     description: function(){
       var ce = CalEvent.findOne({_id:Session.get('editing_event')});
+      if(ce.description == null){
+        return "Description not Available";
+      }
       return ce.description;
     },
     start: function(){
@@ -32,6 +35,13 @@ if (Meteor.isClient) {
     end: function(){
       var ce = CalEvent.findOne({_id:Session.get('editing_event')});
       return ce.eventEnd;
+    },
+    where: function(){
+      var ce = CalEvent.findOne({_id:Session.get('editing_event')});
+      if(ce.location == null){
+        return "\nLocation not Available";
+      }
+      return ce.location;
     }
   });
 
@@ -137,15 +147,30 @@ if (Meteor.isClient) {
             googleCalendarApiKey: 'AIzaSyA0uxTs_BpYPrCEa7K8bG_lsMWlrEMUCcc',
             events: {
                 googleCalendarId: 'slugcal@gmail.com',
-                color: 'darkred',
+                // color: '#fff',
                 borderColor: 'black',
-                className: 'noDec'
+                className: 'noDec',
+                // textColor: "black",
             },
             header: {
               left:   'prev',
               center: 'title',
               right:  'next',
             },
+            eventSources: [
+              {
+                //kresge
+                  url: 'motkp6qd69rchvtpikig3c2mpo@group.calendar.google.com',
+                  color: 'green',
+              },
+              {
+                //porter
+                  googleCalendarId: 'ucsc.edu_df8o0q6v65q6kr9sra8ojle3vs@group.calendar.google.com',
+                  color: '#de0000',
+                  
+              },
+            ],
+
             // console.log(document);
 
             eventClick: function(calevent) {
@@ -159,7 +184,7 @@ if (Meteor.isClient) {
             eventMouseover: function(calEvent, jsEvent, view, date) {
 
               // change the day's background color just for fun
-              $(this).css('background-color', 'red');
+              // $(this).css('background-color', 'red');
 
             },  
             eventAfterAllRender: function(view) {
@@ -170,7 +195,6 @@ if (Meteor.isClient) {
 
               calStart = [];
               calEnd = [];
-//               Tylers code screws the start and end db entry, i dunno why
 //               if(CalEvent.find().fetch() != 0)
 //                 return;
               cal.forEach(function(item) {
@@ -193,6 +217,10 @@ if (Meteor.isClient) {
             }
         });
     });
+
+    // var calendar = $('#calendarFull').fullCalendar({
+    //     events:  calObj
+    //   });
     
    }
 }

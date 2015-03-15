@@ -45,13 +45,14 @@
           <label for="description" style="display:inline-block">Description</label>
             <p id="description" style="display:inline-block;">{{description}}</p>
             <button type="button" class="btn btn-info" data-dismiss="modal" style="display:inline-block; float:right;">RSVP</button>
-            <button type="button" class="btn btn-default closeDialog" data-dismiss="modal">Close</button>
+          <!-- <label>Where</label> -->
+          <p id="where" style="display:inline-block;"><b>Where:</b> {{where}}</p>
           </div>
         </div>
         <div class="modal-footer">
           {{>chat}}
         </div>
-        <input type="text" class="form-control" placeholder="" value="{{start}}" readonly >
+        <input type="text" class="form-control" placeholder="" value="{{start}}" text-align="center" readonly >
         <input type="text" class="form-control" placeholder="" value="{{end}}" readonly>
 
       </div>

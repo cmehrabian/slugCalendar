@@ -40,7 +40,7 @@ Meteor.startup(function () {
 
 SearchSource.defineSource('calevent', function(searchText, options) 
 {
-  var options = {sort: {isoScore: -1}, limit: 5};
+  var options = {sort: {isoScore: -1}, limit: 2};
 
   if(searchText){
     return CalEvent.find({ $text: { $search:searchText } });
