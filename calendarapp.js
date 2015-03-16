@@ -186,7 +186,13 @@ if (Meteor.isClient) {
                   url: 'a3ra9d7raj4hg3814375kjcioc@group.calendar.google.com',
                   color: '#e87b19',
                   className: 'crownDisplay',
-              }
+              },
+              {
+                //crown
+                  url: 'kqc7u11kl1stm7oon368uhhtd8@group.calendar.google.com',
+                  color: '#1b32db',
+                  className: 'college8Display',
+              },
             ],
 
             // console.log(document);

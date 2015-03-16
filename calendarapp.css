@@ -18,7 +18,7 @@
 
 #login-buttons {
 	float: right;
-	margin-right: 150px;
+	/*margin-right: 150px;*/
 }
 
 .display{
@@ -40,7 +40,7 @@
 }
 #chat-wrapper{
 	position: fixed;
-  top: 85%;
+  top: 87%;
   width: 700px;
 }
 
@@ -56,7 +56,6 @@
 
 #chat-log {
   overflow-y:auto;
-  padding-top: 40px;
   float:center;
 }
 
@@ -103,7 +102,7 @@ input[type=checkbox] {
 }
 #porterForm{
 	height: 100px;
-  width: 200px;
+  width: 180px;
   background-image: url(porterOn.svg);
   overflow: hidden;
   position: relative;
@@ -112,7 +111,7 @@ input[type=checkbox] {
 
 #kresgeForm{
 	height: 100px;
-  width: 200px;
+  width: 180px;
   background-image: url(kresgeOn.svg);
   overflow: hidden;
   position: relative;
@@ -122,7 +121,7 @@ input[type=checkbox] {
 
 #oakesForm{
 	height: 100px;
-  width: 200px;
+  width: 180px;
   background-image: url(oakesOn.svg);
   overflow: hidden;
   position: relative;
@@ -132,8 +131,17 @@ input[type=checkbox] {
 
 #crownForm{
 	height: 100px;
-  width: 200px;
+  width: 180px;
   background-image: url(CrownOn.svg);
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+
+}
+#college8Form{
+	height: 100px;
+  width: 180px;
+  background-image: url(college8On.svg);
   overflow: hidden;
   position: relative;
   display: inline-block;

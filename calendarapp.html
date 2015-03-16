@@ -24,28 +24,38 @@
 		{{>loginButtons}}
     <!-- {{>search}}
     {{>searchResult}} -->
-    <div id="porterForm">
-      <input type="checkbox" name="college6" value="Porter" class="toggle"/>
-      <img src="porterOff.svg" />
-      <label for="porter"></label> 
-    </div>
-
-    <div id="kresgeForm">
-       <input type="checkbox" name="kresge" value="Kresge" id="kresge" class="toggle" />
-       <img src="kresgeOff.svg" />
-       <label for="kresge"></label>
-    </div>
-
-    <div id="oakesForm">
-       <input type="checkbox" name="oakes" value="Oakes" id="oakes" class="toggle" />
-       <img src="oakesOff.svg" />
-       <label for="oakes"></label>
-    </div>
-
-    <div id="crownForm">
-       <input type="checkbox" name="crown" value="Crown" id="crown" class="toggle" />
-       <img src="CrownOff.svg" />
-       <label for="crown"></label>
+    <div id="form">
+      <div id="form-inner">
+        <div id="porterForm">
+          <input type="checkbox" name="college6" value="Porter" class="toggle"/>
+          <img src="porterOff.svg" />
+          <label for="porter"></label> 
+        </div>
+        
+        <div id="kresgeForm">
+           <input type="checkbox" name="kresge" value="Kresge" id="kresge" class="toggle" />
+           <img src="kresgeOff.svg" />
+           <label for="kresge"></label>
+        </div>
+        
+        <div id="oakesForm">
+           <input type="checkbox" name="oakes" value="Oakes" id="oakes" class="toggle" />
+           <img src="oakesOff.svg" />
+           <label for="oakes"></label>
+        </div>
+        
+        <div id="crownForm">
+           <input type="checkbox" name="crown" value="Crown" id="crown" class="toggle" />
+           <img src="CrownOff.svg" />
+           <label for="crown"></label>
+        </div>
+        
+        <div id="college8Form">
+           <input type="checkbox" name="college8" value="College8" id="college8" class="toggle" />
+           <img src="college8Off.svg" />
+           <label for="college8"></label>
+        </div>
+      </div>
     </div>
 
 
@@ -160,12 +170,16 @@
             $('.noDec').css('display', 'none');
             $('.oakesDisplay').css('display', 'none');
             $('.crownDisplay').css('display', 'none');
+            $('.college8Display').css('display', 'none');
+
           } 
           else {
             $('.kresgeDisplay').css('display', 'block');
             $('.noDec').css('display', 'block');
             $('.oakesDisplay').css('display', 'block');
             $('.crownDisplay').css('display', 'block');
+            $('.college8Display').css('display', 'block');
+
           }
       });
 
@@ -176,12 +190,16 @@
             $('.noDec').css('display', 'none');
             $('.oakesDisplay').css('display', 'none');
             $('.crownDisplay').css('display', 'none');
+            $('.college8Display').css('display', 'none');
+
           } 
           else {
             $('.porterDisplay').css('display', 'block');
             $('.noDec').css('display', 'block');
             $('.oakesDisplay').css('display', 'block');
             $('.crownDisplay').css('display', 'block');
+            $('.college8Display').css('display', 'block');
+
           }
       });
 
@@ -192,12 +210,16 @@
             $('.noDec').css('display', 'none');
             $('.kresgeDisplay').css('display', 'none');
             $('.crownDisplay').css('display', 'none');
+            $('.college8Display').css('display', 'none');
+
           } 
           else {
             $('.porterDisplay').css('display', 'block');
             $('.noDec').css('display', 'block');
             $('.kresgeDisplay').css('display', 'block');
             $('.crownDisplay').css('display', 'block');
+            $('.college8Display').css('display', 'block');
+
           }
       });
 
@@ -208,12 +230,36 @@
             $('.noDec').css('display', 'none');
             $('.kresgeDisplay').css('display', 'none');
             $('.oakesDisplay').css('display', 'none');
+            $('.college8Display').css('display', 'none');
+
           } 
           else {
             $('.porterDisplay').css('display', 'block');
             $('.noDec').css('display', 'block');
             $('.kresgeDisplay').css('display', 'block');
             $('.oakesDisplay').css('display', 'block');
+            $('.college8Display').css('display', 'block');
+
+          }
+      });
+
+      $('input[name="college8"]').on('click', function(){
+          if ( $(this).is(':checked') ) {
+            console.log("yes");
+            $('.porterDisplay').css('display', 'none');
+            $('.noDec').css('display', 'none');
+            $('.kresgeDisplay').css('display', 'none');
+            $('.oakesDisplay').css('display', 'none');
+            $('.crownDisplay').css('display', 'none');
+
+          } 
+          else {
+            $('.porterDisplay').css('display', 'block');
+            $('.noDec').css('display', 'block');
+            $('.kresgeDisplay').css('display', 'block');
+            $('.oakesDisplay').css('display', 'block');
+            $('.crownDisplay').css('display', 'block');
+
           }
       });
 
