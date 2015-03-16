@@ -1,5 +1,6 @@
 if (Meteor.isClient) {
 
+//=========================================
   // DIALOG
 
   Template.dialog.events({
@@ -28,6 +29,7 @@ if (Meteor.isClient) {
     },
     start: function(){
       var ce = CalEvent.findOne({_id:Session.get('editing_event')});
+      
       return ce.eventStart;
       //return ce.start;
       // console.log(this);
@@ -93,6 +95,9 @@ if (Meteor.isClient) {
     }, 200)
   });
 
+//=========================================
+  // CHAT 
+
   Template.chat.helpers({
     chatLog:function(){
       // console.log(modalID);
@@ -123,11 +128,10 @@ if (Meteor.isClient) {
   });
 
 
+
+
 //=========================================
-  // DIALOG
-
-
-
+  // CALENDAR
 
   Template.main.helpers({
     // addresses: function(){
@@ -162,13 +166,27 @@ if (Meteor.isClient) {
                 //kresge
                   url: 'motkp6qd69rchvtpikig3c2mpo@group.calendar.google.com',
                   color: 'green',
+                  className: 'kresgeDisplay',
               },
               {
                 //porter
                   googleCalendarId: 'ucsc.edu_df8o0q6v65q6kr9sra8ojle3vs@group.calendar.google.com',
                   color: '#de0000',
+                  className: 'porterDisplay',
                   
               },
+              {
+                //oakes
+                  googleCalendarId: 'ucsc.edu_sau0dj3g2tig75qjhp7shhll4g@group.calendar.google.com',
+                  color: '#c921c9',
+                  className: 'oakesDisplay',
+              },
+              {
+                //crown
+                  url: 'a3ra9d7raj4hg3814375kjcioc@group.calendar.google.com',
+                  color: '#e87b19',
+                  className: 'crownDisplay',
+              }
             ],
 
             // console.log(document);
@@ -198,13 +216,24 @@ if (Meteor.isClient) {
 //               if(CalEvent.find().fetch() != 0)
 //                 return;
               cal.forEach(function(item) {
-                eventStart = item.start._d;
-                eventEnd = item.end._d;
-                eventID = item._id;
+
+
+                eventStart = String(item.start._d);
+                startFinal = eventStart.slice(0, 21);
+
+
+                eventEnd = String(item.end._d);
+                endFinal = eventEnd.slice(0, 21);
+
+
+                eventID = String(item._id);
+
+
+
                 // calStart.push(item.start._d);
                 // calEnd.push(item._end._d)
-                CalEvent.update({_id:item._id}, {$set:{"eventStart":item.start._d}});
-                CalEvent.update({_id:item._id}, {$set:{"eventEnd":item.end._d}});
+                CalEvent.update({_id:item._id}, {$set:{"eventStart":startFinal  }});
+                CalEvent.update({_id:item._id}, {$set:{"eventEnd":endFinal}});
                 
                 // CalEvent.push(eventStart);
                 CalEvent.insert(item);

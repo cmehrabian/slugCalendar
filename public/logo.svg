@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+<symbol  id="Calendar" viewBox="-32 -31.9 64 63.7">
+	<path d="M27,25.9h-3.1v0.9c0,2.8-2.2,5-5,5h-0.1c-2.8,0-5-2.2-5-5v-0.9h-27.7v0.9c0,2.8-2.2,5-5,5h-0.1c-2.8,0-5-2.2-5-5v-0.9H-27
+		c-2.8,0-5-2.2-5-5v-47.8c0-2.8,2.2-5,5-5h54c2.8,0,5,2.2,5,5v47.8C32,23.7,29.8,25.9,27,25.9z M15.8,26.9c0,1.7,1.3,3,3,3h0.1
+		c1.7,0,3-1.3,3-3V18c0-1.7-1.3-3-3-3h-0.1c-1.7,0-3,1.3-3,3V26.9z M-21.9,26.9c0,1.7,1.3,3,3,3h0.1c1.7,0,3-1.3,3-3V18
+		c0-1.7-1.3-3-3-3h-0.1c-1.7,0-3,1.3-3,3V26.9z M27-27.9h-54c-0.5,0-1,0.5-1,1V8.3h56v-35.1C28-27.4,27.5-27.9,27-27.9z"/>
+</symbol>
+<symbol  id="Calendar_-_Grey" viewBox="-32 -32 64 64">
+	<g>
+		<g>
+			
+				<radialGradient id="SVGID_1_" cx="-6.398600e-02" cy="-22.5724" r="32.4843" gradientTransform="matrix(1 0 0 1 -4.000000e-04 0)" gradientUnits="userSpaceOnUse">
+				<stop  offset="0" style="stop-color:#E7ECEF"/>
+				<stop  offset="1" style="stop-color:#BFC8CD"/>
+			</radialGradient>
+			<path fill="url(#SVGID_1_)" d="M0-31.5c-17.4,0-31.5,14.1-31.5,31.5S-17.4,31.5,0,31.5S31.5,17.4,31.5,0S17.4-31.5,0-31.5z"/>
+			<g>
+				<path fill="#8B98A0" d="M0,31c17.1,0,31-13.9,31-31S17.1-31,0-31S-31-17.1-31,0S-17.1,31,0,31 M0,32c-17.7,0-32-14.3-32-32
+					c0-17.7,14.3-32,32-32c17.7,0,32,14.3,32,32C32,17.7,17.7,32,0,32L0,32z"/>
+			</g>
+		</g>
+		<g opacity="0.8">
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-0.9058" y1="11.2477" x2="15.6719" y2="-52.2848">
+				<stop  offset="0" style="stop-color:#FFFFFF"/>
+				<stop  offset="1" style="stop-color:#B7C6CE"/>
+			</linearGradient>
+			<path fill="url(#SVGID_2_)" d="M21.4,22.4C26.7,16.8,30,9.3,30,1c0-17.1-13.9-31-31-31c-8.3,0-15.8,3.3-21.4,8.6
+				C-16.8-27.3-8.8-31,0-31c17.1,0,31,13.9,31,31C31,8.8,27.3,16.8,21.4,22.4z"/>
+		</g>
+		<g>
+			<g>
+				<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-8.4622" y1="30.7903" x2="2.9763" y2="-10.8245">
+					<stop  offset="0" style="stop-color:#FFFBD4"/>
+					<stop  offset="1" style="stop-color:#000000"/>
+				</linearGradient>
+				<path fill="url(#SVGID_3_)" d="M-7.6-5.7C3.2,3.7,17.3,12.4,29.4,5.8C26.7,19.6,14.6,30,0,30c-16.5,0-30-13.5-30-30
+					c0-4,0.8-7.8,2.2-11.3C-23-12.5-15.6-12.6-7.6-5.7z"/>
+			</g>
+		</g>
+		<g>
+			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-13.8365" y1="36.3577" x2="7.4504" y2="-25.3728">
+				<stop  offset="0" style="stop-color:#FFFFFF"/>
+				<stop  offset="1" style="stop-color:#000000"/>
+			</linearGradient>
+			<path fill="url(#SVGID_4_)" d="M-28-2c0,16.5,13.5,30,30,30c7.8,0,14.8-3,20.2-7.8C16.7,26.2,8.8,30,0,30c-16.5,0-30-13.5-30-30
+				c0-8.8,3.8-16.7,9.8-22.2C-25-16.8-28-9.8-28-2z"/>
+		</g>
+	</g>
+	<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="1.001" y1="-16.705" x2="1.001" y2="15.0254">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="1" style="stop-color:#B7C6CE"/>
+	</linearGradient>
+	<path opacity="0.8" fill="url(#SVGID_5_)" d="M14.5,12H13v0.5c0,1.4-1.1,2.5-2.5,2.5h0c-1.4,0-2.5-1.1-2.5-2.5V12H-5.9v0.5
+		c0,1.4-1.1,2.5-2.5,2.5h0c-1.4,0-2.5-1.1-2.5-2.5V12h-1.5c-1.4,0-2.5-1.1-2.5-2.5v-23.9c0-1.4,1.1-2.5,2.5-2.5h27
+		c1.4,0,2.5,1.1,2.5,2.5V9.5C17,10.8,15.9,12,14.5,12z M8.9,12.4c0,0.8,0.7,1.5,1.5,1.5h0c0.8,0,1.5-0.7,1.5-1.5V8
+		c0-0.8-0.7-1.5-1.5-1.5h0C9.6,6.5,8.9,7.2,8.9,8V12.4z M-10,12.4c0,0.8,0.7,1.5,1.5,1.5h0c0.8,0,1.5-0.7,1.5-1.5V8
+		c0-0.8-0.7-1.5-1.5-1.5h0C-9.3,6.5-10,7.2-10,8V12.4z M14.5-14.9h-27c-0.3,0-0.5,0.2-0.5,0.5V3.1h28v-17.6
+		C15-14.7,14.8-14.9,14.5-14.9z"/>
+	<path d="M13.5,13h-1.6v0.5c0,1.4-1.1,2.5-2.5,2.5h0c-1.4,0-2.5-1.1-2.5-2.5V13H-6.9v0.5c0,1.4-1.1,2.5-2.5,2.5h0
+		c-1.4,0-2.5-1.1-2.5-2.5V13h-1.5c-1.4,0-2.5-1.1-2.5-2.5v-23.9c0-1.4,1.1-2.5,2.5-2.5h27c1.4,0,2.5,1.1,2.5,2.5v23.9
+		C16,11.8,14.9,13,13.5,13z M7.9,13.4c0,0.8,0.7,1.5,1.5,1.5h0c0.8,0,1.5-0.7,1.5-1.5V9c0-0.8-0.7-1.5-1.5-1.5h0
+		C8.6,7.5,7.9,8.2,7.9,9V13.4z M-11,13.4c0,0.8,0.7,1.5,1.5,1.5h0c0.8,0,1.5-0.7,1.5-1.5V9c0-0.8-0.7-1.5-1.5-1.5h0
+		C-10.3,7.5-11,8.2-11,9V13.4z M13.5-13.9h-27c-0.3,0-0.5,0.2-0.5,0.5V4.1h28v-17.6C14-13.7,13.8-13.9,13.5-13.9z"/>
+</symbol>
+<g id="Layer_1">
+	
+		<use xlink:href="#Calendar_-_Grey"  width="64" height="64" x="-32" y="-32" transform="matrix(1 0 0 -1 47.8646 73.0112)" display="none" overflow="visible"/>
+	
+		<use xlink:href="#Calendar"  width="64" height="63.7" x="-32" y="-31.9" transform="matrix(1.3842 0 0 -1.3842 50.2949 48.103)" overflow="visible"/>
+</g>
+<g id="Layer_2">
+	
+		<text transform="matrix(1 0 0 1 21.5122 75.6495)" fill="#E6C81D" stroke="#000000" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" font-family="'Noteworthy-Bold'" font-size="39">Cal</text>
+</g>
+</svg>

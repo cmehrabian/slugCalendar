@@ -15,11 +15,20 @@
 <template name="main">
 	
 	<div class="container">
-		<h1 align="center">Calendar</h1>	
+		<!-- <h1 align="center">Calendar</h1> -->
+    <div style="width: 72px;margin: auto;">
+    <img src="logo.svg" />
+    </div>
+
     {{>runner}}
 		{{>loginButtons}}
-    {{>search}}
-    {{>searchResult}}
+    <!-- {{>search}}
+    {{>searchResult}} -->
+    <input type="checkbox" name="college6" value="Porter"> Porter
+    <input type="checkbox" name="kresge" value="Kresge"> Kresge
+    <input type="checkbox" name="oakes" value="Oakes"> Oakes
+    <input type="checkbox" name="crown" value="Oakes"> Crown
+
     <!-- <div class="form">
         <input type="text" name="q" id="q" autocomplete="off" spellcheck="false" autocorrect="false" class="form-control string" placeholder="Search..." />
     </div> -->
@@ -48,12 +57,12 @@
           <!-- <label>Where</label> -->
           <p id="where" style="display:inline-block;"><b>Where:</b> {{where}}</p>
           </div>
-        </div>
+        </div>  
         <div class="modal-footer">
           {{>chat}}
         </div>
-        <input type="text" class="form-control" placeholder="" value="{{start}}" text-align="center" readonly >
-        <input type="text" class="form-control" placeholder="" value="{{end}}" readonly>
+        <input type="text" class="form-control" placeholder="" value="" style="text-align: center" readonly>
+        <input type="text" class="form-control" placeholder="" value="{{start}} - {{end}}" style="text-align: center">
 
       </div>
     </div>
@@ -97,7 +106,9 @@
         {{/each}}
     </div>
     <div>
-      <input id="chat-box" type="text" placeholder="Hypothetically..." />
+      <div id="chat-wrapper">
+      <input id="chat-box" type="text" style="text-align:center;" placeholder="Chat..." />
+      </div>
       <button id="chat-send-button"> Send </button>
     </div>
   {{else}}
@@ -120,6 +131,74 @@
       $(document).ready(function(){
         moveit();
       });
+      // 1. selects '<input type="radio" />' elements with the 'name' attribute of 'postage'
+      // 2. assigns the onChange/onchange event handler
+      $('input[name="college6"]').on('click', function(){
+          if ( $(this).is(':checked') ) {
+            console.log("yes");
+            $('.kresgeDisplay').css('display', 'none');
+            $('.noDec').css('display', 'none');
+            $('.oakesDisplay').css('display', 'none');
+            $('.crownDisplay').css('display', 'none');
+          } 
+          else {
+            $('.kresgeDisplay').css('display', 'block');
+            $('.noDec').css('display', 'block');
+            $('.oakesDisplay').css('display', 'block');
+            $('.crownDisplay').css('display', 'block');
+          }
+      });
+
+      $('input[name="kresge"]').on('click', function(){
+          if ( $(this).is(':checked') ) {
+            console.log("yes");
+            $('.porterDisplay').css('display', 'none');
+            $('.noDec').css('display', 'none');
+            $('.oakesDisplay').css('display', 'none');
+            $('.crownDisplay').css('display', 'none');
+          } 
+          else {
+            $('.porterDisplay').css('display', 'block');
+            $('.noDec').css('display', 'block');
+            $('.oakesDisplay').css('display', 'block');
+            $('.crownDisplay').css('display', 'block');
+          }
+      });
+
+      $('input[name="oakes"]').on('click', function(){
+          if ( $(this).is(':checked') ) {
+            console.log("yes");
+            $('.porterDisplay').css('display', 'none');
+            $('.noDec').css('display', 'none');
+            $('.kresgeDisplay').css('display', 'none');
+            $('.crownDisplay').css('display', 'none');
+          } 
+          else {
+            $('.porterDisplay').css('display', 'block');
+            $('.noDec').css('display', 'block');
+            $('.kresgeDisplay').css('display', 'block');
+            $('.crownDisplay').css('display', 'block');
+          }
+      });
+
+      $('input[name="crown"]').on('click', function(){
+          if ( $(this).is(':checked') ) {
+            console.log("yes");
+            $('.porterDisplay').css('display', 'none');
+            $('.noDec').css('display', 'none');
+            $('.kresgeDisplay').css('display', 'none');
+            $('.oakesDisplay').css('display', 'none');
+          } 
+          else {
+            $('.porterDisplay').css('display', 'block');
+            $('.noDec').css('display', 'block');
+            $('.kresgeDisplay').css('display', 'block');
+            $('.oakesDisplay').css('display', 'block');
+          }
+      });
+
+
+
    </script>
 
 </template>

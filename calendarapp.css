@@ -20,3 +20,58 @@
 	float: right;
 	margin-right: 150px;
 }
+
+.display{
+/*	display: none;*/
+}
+
+.form-control{
+	pointer-events: none;
+	background-color:rgba(0,255,0,0.3);
+}
+
+.end{
+	background-color:rgba(255,0,0,0.3);
+}
+
+.modal-footer{
+	height:200px;
+	overflow: auto;
+}
+#chat-wrapper{
+	position: fixed;
+  top: 85%;
+  width: 700px;
+}
+
+
+#chat-box {
+  padding-top: 3px;
+  top:-17em;
+  right:7.4em;
+  width: 80%;
+  float:left;
+
+}
+
+#chat-log {
+  overflow-y:auto;
+  padding-top: 40px;
+  float:center;
+}
+
+
+#chat-send-button {
+  position:fixed;
+  top:-17.2em;
+  right:12em;
+}
+
+.chat-username-column {
+  float:left;
+}
+
+.chat-body-column {
+  right:80%;
+}
+

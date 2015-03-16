@@ -1,19 +1,19 @@
 Meteor.startup(function () {
     Meteor.methods({
-    'saveCalEvent':function(ce){
-      CalEvent.insert(ce);
-    },
-    'updateTitle':function(id,title){
-      return CalEvent.update({_id:id},{$set:{title:title}});
-    },
-    'moveEvent':function(reqEvent){
-      return CalEvent.update({_id:reqEvent._id},{
-          $set:{
-            start:reqEvent.start,
-            end:reqEvent.end
-          }
-      })
-    },
+    // 'saveCalEvent':function(ce){
+    //   CalEvent.insert(ce);
+    // },
+    // 'updateTitle':function(id,title){
+    //   return CalEvent.update({_id:id},{$set:{title:title}});
+    // },
+    // 'moveEvent':function(reqEvent){
+    //   return CalEvent.update({_id:reqEvent._id},{
+    //       $set:{
+    //         start:reqEvent.start,
+    //         end:reqEvent.end
+    //       }
+    //   })
+    // },
     newMessage: function(body, ceID){
     if(!Meteor.user())
       return;
@@ -40,7 +40,7 @@ Meteor.startup(function () {
 
 SearchSource.defineSource('calevent', function(searchText, options) 
 {
-  var options = {sort: {isoScore: -1}, limit: 2};
+  var options = {sort: {isoScore: -1}, limit:100};
 
   if(searchText){
     return CalEvent.find({ $text: { $search:searchText } });
