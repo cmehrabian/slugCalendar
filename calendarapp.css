@@ -74,4 +74,97 @@
 .chat-body-column {
   right:80%;
 }
+/*
+input[type=checkbox] {
+    display: none;
+  }
+
+  input[type=checkbox] + label
+   {
+       background-image: url("porterOff.svg");
+       height: 100px;
+       width: 200px;
+       display:inline-block;
+       padding: 0 0 0 0px;
+   }
+
+   input[type=checkbox]:checked + label
+    {
+        background-image: url("porterOn.svg");
+        height: 100px;
+        width: 200px;
+        display:inline-block;
+        padding: 0 0 0 0px;
+    }*/
+
+
+#kresge{
+	background-image: url("kresgeOff.svg");
+}
+#porterForm{
+	height: 100px;
+  width: 200px;
+  background-image: url(porterOn.svg);
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+#kresgeForm{
+	height: 100px;
+  width: 200px;
+  background-image: url(kresgeOn.svg);
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+
+}
+
+#oakesForm{
+	height: 100px;
+  width: 200px;
+  background-image: url(oakesOn.svg);
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+
+}
+
+#crownForm{
+	height: 100px;
+  width: 200px;
+  background-image: url(CrownOn.svg);
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  
+}
+
+
+.toggle {
+  height: 200px;
+  width: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+}
+
+input.toggle:checked + img {
+   opacity: 0;
+}
+
+
+ 
+img {
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  -ms-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
 

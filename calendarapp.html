@@ -24,10 +24,30 @@
 		{{>loginButtons}}
     <!-- {{>search}}
     {{>searchResult}} -->
-    <input type="checkbox" name="college6" value="Porter"> Porter
-    <input type="checkbox" name="kresge" value="Kresge"> Kresge
-    <input type="checkbox" name="oakes" value="Oakes"> Oakes
-    <input type="checkbox" name="crown" value="Oakes"> Crown
+    <div id="porterForm">
+      <input type="checkbox" name="college6" value="Porter" class="toggle"/>
+      <img src="porterOff.svg" />
+      <label for="porter"></label> 
+    </div>
+
+    <div id="kresgeForm">
+       <input type="checkbox" name="kresge" value="Kresge" id="kresge" class="toggle" />
+       <img src="kresgeOff.svg" />
+       <label for="kresge"></label>
+    </div>
+
+    <div id="oakesForm">
+       <input type="checkbox" name="oakes" value="Oakes" id="oakes" class="toggle" />
+       <img src="oakesOff.svg" />
+       <label for="oakes"></label>
+    </div>
+
+    <div id="crownForm">
+       <input type="checkbox" name="crown" value="Crown" id="crown" class="toggle" />
+       <img src="CrownOff.svg" />
+       <label for="crown"></label>
+    </div>
+
 
     <!-- <div class="form">
         <input type="text" name="q" id="q" autocomplete="off" spellcheck="false" autocorrect="false" class="form-control string" placeholder="Search..." />
