@@ -30,7 +30,7 @@
 		
 			<use xlink:href="#Button_4_-_Grey"  width="145" height="33" x="-72.5" y="-16.5" transform="matrix(1.1604 0 0 -1.1604 97.4884 48.3099)" overflow="visible" opacity="0.5"/>
 		<g opacity="0.9">
-			<g>
+			<g opacity="0">
 				<path fill="#1B32DB" d="M173.6,41.3c0,5-5.2,9.1-11.6,9.1H33c-6.4,0-11.6-4.1-11.6-9.1s5.2-9.1,11.6-9.1h129
 					C168.4,32.2,173.6,36.3,173.6,41.3z"/>
 			</g>

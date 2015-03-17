@@ -15,7 +15,6 @@
 <template name="main">
 	
 	<div class="container">
-		<!-- <h1 align="center">Calendar</h1> -->
     <div style="width: 72px;margin: auto;">
     <img src="logo.svg" />
     </div>
@@ -57,13 +56,6 @@
         </div>
       </div>
     </div>
-
-
-    <!-- <div class="form">
-        <input type="text" name="q" id="q" autocomplete="off" spellcheck="false" autocorrect="false" class="form-control string" placeholder="Search..." />
-    </div> -->
-	<div id="calendarFull">
-	</div>
   <div id="calendar"></div>
 	</div>
   {{#if editing_event}}
@@ -71,80 +63,6 @@
   {{/if}}
 </template>
 
-<template name="dialog">
-  <div class="modal fade in show" id="" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close closeDialog" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="">{{title}}</h4>
-        </div>
-        <div class="modal-body">
-          <div class="span 3">
-          <label for="description" style="display:inline-block">Description</label>
-            <p id="description" style="display:inline-block;">{{description}}</p>
-            <button type="button" class="btn btn-info" data-dismiss="modal" style="display:inline-block; float:right;">RSVP</button>
-          <!-- <label>Where</label> -->
-          <p id="where" style="display:inline-block;"><b>Where:</b> {{where}}</p>
-          </div>
-        </div>  
-        <div class="modal-footer">
-          {{>chat}}
-        </div>
-        <input type="text" class="form-control" placeholder="" value="" style="text-align: center" readonly>
-        <input type="text" class="form-control" placeholder="" value="{{start}} - {{end}}" style="text-align: center">
-
-      </div>
-    </div>
-  </div>
-</template>
-
-<template name="search">
-    <div class="form">
-          <input type="text" id="search-box" placeholder="Search..." />
-          
-    </div>
-</template>
-<template name="searchResult">
-  <div id="search-result">
-      <div id = "search-meta">
-        {{#if isLoading}}
-          searching ...
-        {{/if}}
-      </div>
-        {{#each getEvents}}
-          <div class="eventTitle">
-            <h4 class="Title">
-              <a href="{{title}}" target="_blank">{{{eventTitle}}}</a>
-            </h4>
-            <div class="description">
-              {{{description}}}
-            </div>
-          </div>
-        {{/each}}
-  </div>
-</template>
-
-<template name="chat">
-  {{#if currentUser}}
-    <div id="chat-log">
-        {{#each chatLog}}
-          <div>
-            <span class="chat-username-column">{{userName}}</span>
-            <span class="chat-body-column">{{body}}</span>
-          </div>
-        {{/each}}
-    </div>
-    <div>
-      <div id="chat-wrapper">
-      <input id="chat-box" type="text" style="text-align:center;" placeholder="Chat..." />
-      </div>
-      <button id="chat-send-button"> Send </button>
-    </div>
-  {{else}}
-    Log in!
-  {{/if}}
-</template>
 
 <template name="runner">
   <div class="slug-banner">
@@ -161,8 +79,6 @@
       $(document).ready(function(){
         moveit();
       });
-      // 1. selects '<input type="radio" />' elements with the 'name' attribute of 'postage'
-      // 2. assigns the onChange/onchange event handler
       $('input[name="college6"]').on('click', function(){
           if ( $(this).is(':checked') ) {
             console.log("yes");
@@ -262,8 +178,6 @@
 
           }
       });
-
-
 
    </script>
 
