@@ -238,7 +238,7 @@ if (Meteor.isClient) {
 
                 // calStart.push(item.start._d);
                 // calEnd.push(item._end._d)
-                CalEvent.update({_id:item._id}, {$set:{"eventStart":startFinal  }});
+                CalEvent.update({_id:item._id}, {$set:{"eventStart":startFinal}});
                 CalEvent.update({_id:item._id}, {$set:{"eventEnd":endFinal}});
                 
                 // CalEvent.push(eventStart);
