@@ -7,6 +7,10 @@
     max-width: 82px;
 }
 
+#initLogin{
+    margin: 170px 610px auto;
+}
+
 #login-buttons{
     float: right;
 }

@@ -6,8 +6,12 @@
 	{{#if currentUser}}
  		{{> main}}
 	{{else}}
-	<div class="container"> <!-- Center and Make look pretty -->
-		{{>loginButtons}}
+	<div id="" style=""> <!-- Center and Make look pretty -->
+    <h1 align="center">Sign in to use Slug Calendar</h1> 
+
+      <div id="initLogin">
+  		{{>loginButtons}}
+      </div>
 	</div>
 	{{/if}}
 </body>
